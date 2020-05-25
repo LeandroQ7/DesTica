@@ -6,7 +6,7 @@
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/fav.png">
     <!-- Author Meta -->
-    <meta name="author" content="colorlib">
+    <meta name="Grupo 6 LEO y ANTHONY" content="colorlib">
     <!-- Meta Description -->
     <meta name="description" content="">
     <!-- Meta Keyword -->
@@ -45,10 +45,10 @@
               <nav id="nav-menu-container">
                 <ul class="nav-menu">
                   <li><a href="?index">Home</a></li>
-                  <li><a href="?destinos">Destinos</a></li>
-                  <li><a href="?intereses">Intereses</a></li>
+                  <li><a href="?destination">Destinos</a></li>
+                  <li><a href="?interest">Intereses</a></li>
                   <li><a href="?opinion">Danos tu opinion</a></li>
-                  <li><a href="?acerca">Acerca de nosotros</a></li>
+                  <li><a href="?about">Acerca de nosotros</a></li>
                 
                 </ul>
               </nav><!-- #nav-menu-container -->                      
