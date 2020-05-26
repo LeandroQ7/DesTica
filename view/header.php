@@ -50,6 +50,7 @@
                   <li><a href="?opinion">Danos tu opinion</a></li>
                   <li><a href="?about">Acerca de nosotros</a></li>
                   <li class="btn-primary"><a href="?login">Iniciar Sesión</a></li>
+                  <li class="btn-danger"><a href="?register">Registrarse</a></li>
                 </ul>
               </nav><!-- #nav-menu-container -->                      
           </div>

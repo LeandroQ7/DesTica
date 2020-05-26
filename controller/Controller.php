@@ -13,6 +13,9 @@ class Controller {
         $pagina=$_SERVER['QUERY_STRING'];
 
         switch ($pagina) {
+            case 'register':
+                include 'view/register.php';
+               break;
             case 'login':
                  include 'view/login.php';
                 break;
