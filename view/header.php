@@ -40,13 +40,13 @@
         <div class="container main-menu">
           <div class="row align-items-center justify-content-between d-flex">
               <div id="logo">
-                <a href="index.html"><img src="view/img/logo.png" alt="" title="" /></a>
+                <a href="?index"><img src="view/img/logo.png" alt="" title="" /></a>
               </div>
               <nav id="nav-menu-container">
                 <ul class="nav-menu">
                   <li><a href="?index">Home</a></li>
                   <li><a href="?destination">Atractivos Turísticos</a></li>
-                  <li><a href="?interest">Atractivos Recomentados</a></li>
+                  <li><a href="?interests">Atractivos Recomentados</a></li>
                   <li><a href="?opinion">Danos tu opinion</a></li>
                   <li><a href="?about">Acerca de nosotros</a></li>
                   <li class="btn-primary"><a href="?login">Iniciar Sesión</a></li>
