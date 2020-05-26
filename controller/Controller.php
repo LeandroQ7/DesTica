@@ -13,22 +13,24 @@ class Controller {
         $pagina=$_SERVER['QUERY_STRING'];
 
         switch ($pagina) {
+            case 'login':
+                 include 'view/login.php';
+                break;
             case 'destination':
-            include 'view/destination.php';
-            break;
+                 include 'view/destination.php';
+                  break;
              case 'interests':
-            include 'view/interests.php';
-            break;
+                 include 'view/interests.php';
+                 break;
             case 'opinion':
-            include 'view/opinion.php';
-            break;
+                include 'view/opinion.php';
+                  break;
             case 'acerca':
-            include 'view/about.php';
-            break;
-
+                 include 'view/about.php';
+                  break;
             default:
-            include 'view/index.php';
-            break;
+                 include 'view/index.php';
+                 break;
         }
 
 
