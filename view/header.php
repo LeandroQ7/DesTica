@@ -46,7 +46,7 @@
                 <ul class="nav-menu">
                   <li><a href="?index">Home</a></li>
                   <li><a href="?destination">Atractivos Turísticos</a></li>
-                  <li><a href="?interest">Intereses</a></li>
+                  <li><a href="?interest">Atractivos Recomentados</a></li>
                   <li><a href="?opinion">Danos tu opinion</a></li>
                   <li><a href="?about">Acerca de nosotros</a></li>
                   <li class="btn-primary"><a href="?login">Iniciar Sesión</a></li>
