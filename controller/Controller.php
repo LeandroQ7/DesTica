@@ -13,8 +13,8 @@ class Controller {
         $pagina=$_SERVER['QUERY_STRING'];
 
         switch ($pagina) {
-            case 'destinations':
-            include 'view/destinations.php';
+            case 'destination':
+            include 'view/destination.php';
             break;
              case 'interests':
             include 'view/interests.php';
