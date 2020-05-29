@@ -14,9 +14,22 @@
             </div>
             <div class="col-lg-6 info-right">
               <h6>Acerca de nosotros</h6>
-              <h1>Who We Are?</h1>
+              
               <p>
-                Here, I focus on a range of items and features that we use in life without giving them a second thought. such as Coca Cola. Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                DesTica es una empresa de turismo nacional, que ofrece las mejores experiencias para su familia.
+              </p>
+
+              <h6>Desarrolladores:</h6>
+              
+              <p>
+                Leandro Quesada <br>
+                Anthony Salazar
+              </p>
+               <h6>Contacto:</h6>
+              
+              <p>
+                Tel: xxxx-xxxx <br>
+                Correo: xxxx@gmail.com
               </p>
             </div>
           </div>

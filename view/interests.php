@@ -2,7 +2,7 @@
   include_once 'header.php';          
 ?>
 <!-- Start about-info Area -->
-<form type="submit" action="post">
+<form type="submit" action="?interest=search" method="post">
   <section class="about-info-area section-gap">
       <div class="container">
         <div class="row align-items-center">
@@ -69,7 +69,7 @@
        
           </div>
           <!-- End for Interest-->
-               <button type="button" class="btn btn-success" >Enviar Respuestas</button> 
+               <button type="submit" class="btn btn-success" >Enviar Respuestas</button> 
         </div>
       </div> 
   </section>

@@ -7,7 +7,7 @@
           <div class="row align-items-center">
             <div class="col-lg-6 info-right">
               <h1>Bienvenidos a DesTica</h1>
-              <form class="form-signin">
+              <form class="form-signin" action="?login=verify" method="post">
                 <img class="mb-4" src="view/img/logo.png" alt="" width="72" height="72">
                 <h1 class="h3 mb-3 font-weight-normal">Por favor inicie sesión</h1>
                 <label for="inputEmail" class="sr-only">Email</label>

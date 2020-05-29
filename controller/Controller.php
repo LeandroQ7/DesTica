@@ -31,6 +31,18 @@ class Controller {
             case 'about':
                  include 'view/about.php';
                   break;
+            case 'adminUser':
+                 include 'view/adminUser.php';
+                 break;
+            case 'favorite':
+                 include 'view/favorite.php';
+                 break;
+            case 'estimate':
+                 include 'view/estimate.php';
+                 break;
+            case 'logout':
+                 include 'view/index.php';
+                  break;
 
             //form request
 
@@ -38,6 +50,18 @@ class Controller {
             //$estilo=$this->model->calcularEstilo($_POST['EC'],$_POST['RO'],$_POST['CA'],$_POST['EA']); 
                 include 'view/DestinyDetails.php';
                 break;
+
+            case 'login=verify': 
+                include 'view/userIndex.php';
+                break;
+
+            case 'register=newUser': 
+                include 'view/userIndex.php';
+                break;
+            case 'interest=search': 
+                include 'view/interestResults.php';
+                break;
+
 
             default:
                  include 'view/index.php';

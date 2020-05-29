@@ -7,7 +7,7 @@
           <div class="row align-items-center">
             <div class="col-lg-6 info-right">
               <h1>Bienvenidos a DesTica</h1>
-              <form class="form-signin">
+              <form class="form-signin" action="?register=newUser" method="post">
                 <div class="text-center mb-4">
                   <img class="mb-4" src="view/img/logo.png" alt="" width="72" height="72">
                   <p>Por favor ingrese sus datos personales para crearte una nueva cuenta.</p>

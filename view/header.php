@@ -53,7 +53,7 @@
                   <li><a href="?interests">Atractivos Recomentados</a></li>
                   <li><a href="?opinion">Danos tu opinión</a></li>
                   <li><a href="?about">Acerca de nosotros</a></li>
-                  <li><a href="?about">Presupuesto</a></li>
+                  <li><a href="?estimate">Presupuesto</a></li>
                   <li class="btn-primary"><a href="?login">Iniciar Sesión</a></li>
                   <li class="btn-danger"><a href="?register">Registrarse</a></li>
                 </ul>
