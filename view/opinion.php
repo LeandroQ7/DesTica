@@ -14,9 +14,36 @@
             </div>
             <div class="col-lg-6 info-right">
               <h6>Califica nuestro sitio</h6>
-              <h1>Who We Are?</h1>
-              <p>
-                Here, I focus on a range of items and features that we use in life without giving them a second thought. such as Coca Cola. Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+
+              <p></br>Si quieres calificar nuestro sitio, completa las siguientes preguntas. Tus respuestas ayudaran a mejorar la página.</p>
+              <form type="submit" action="post">
+                      <div class="form-row">
+            <div class="col-lg-6 info-left">
+              <label for="validationTooltip04">Puntuación del Sitio</label><br>
+               <input type="radio" id="5" name="radio" value="5">
+               <label >5</label>
+               <input type="radio" id="4" name="radio"  value="4">
+               <label >4</label>
+               <input type="radio" id="3" name="radio"  value="3">
+               <label >3</label>
+               <input type="radio" id="2" name="radio"  value="2">
+               <label >2</label>
+               <input type="radio" id="1" name="radio"  value="1">
+               <label >1</label>
+  
+            </div>
+            
+            <div class="col-md-4 mb-3">
+              <label for="validationTooltip04">Comentario (Opcional)</label>
+              <textarea rows = "5" cols = "50" name = "comentario">
+            
+         </textarea><br>
+            </div>
+        
+    
+          </div>
+            <button type="button" class="btn btn-success" >Enviar Opinión</button> 
+              </form>
               </p>
             </div>
           </div>

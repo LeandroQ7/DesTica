@@ -20,6 +20,7 @@
       <!--
       CSS
       ============================================= -->
+      <link rel="stylesheet" href="view/css/style.css">
       <link rel="stylesheet" href="view/css/linearicons.css">
       <link rel="stylesheet" href="view/css/font-awesome.min.css">
       <link rel="stylesheet" href="view/css/bootstrap.css">
@@ -29,6 +30,9 @@
       <link rel="stylesheet" href="view/css/animate.min.css">
       <link rel="stylesheet" href="view/css/owl.carousel.css">       
       <link rel="stylesheet" href="view/css/main.css">
+
+      
+
     </head>
     <body>  
       <header id="header">
@@ -44,11 +48,12 @@
               </div>
               <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                  <li><a href="?index">Home</a></li>
-                  <li><a href="?destination">Atractivos Turísticos</a></li>
+                  <li><a href="?index">Inicio</a></li>
+                  <li><a href="?destination">Lugares Turísticos</a></li>
                   <li><a href="?interests">Atractivos Recomentados</a></li>
-                  <li><a href="?opinion">Danos tu opinion</a></li>
+                  <li><a href="?opinion">Danos tu opinión</a></li>
                   <li><a href="?about">Acerca de nosotros</a></li>
+                  <li><a href="?about">Presupuesto</a></li>
                   <li class="btn-primary"><a href="?login">Iniciar Sesión</a></li>
                   <li class="btn-danger"><a href="?register">Registrarse</a></li>
                 </ul>

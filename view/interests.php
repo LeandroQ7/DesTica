@@ -16,38 +16,60 @@
             <div class="col-md-4 mb-3">
               <label for="validationTooltip04">Ambiente Preferido</label>
               <select class="custom-select" id="validationTooltip04" required>
-                <option value="">Seleccione un ambiente</option>
+                <option value="" disabled>Seleccione un ambiente</option>
                 <option selected  value="Playa">Playa</option>
                 <option value="Montaña">Montaña</option>
+                <option value="Montaña">Ciudad</option>
+                <option value="Montaña">Rural</option>
+              </select>
+          
+              <div class="invalid-tooltip">
+                Por favor seleccione una opción.
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="validationTooltip04">Rango de tiempo deseado</label>
+              <select class="custom-select" id="validationTooltip04" required>
+                <option value="" disabled>Seleccione un tiempo </option>
+                <option selected  value="horas">1 a 5 horas</option>
+                <option value="dia">Día completo</option>
+                <option value="Montaña">Mas de un día</option>
               </select>
               <div class="invalid-tooltip">
                 Por favor seleccione una opción.
               </div>
             </div>
             <div class="col-md-4 mb-3">
-              <label for="validationTooltip04">Servicio deseado</label>
+              <label for="validationTooltip04">Condicion de vía</label>
               <select class="custom-select" id="validationTooltip04" required>
-                <option value="">Seleccione un servicio</option>
-                <option selected  value="Playa">Hospedaje</option>
-                <option value="Montaña">Comida</option>
+                <option value="" disabled>Seleccione tipo de camino </option>
+                <option selected value="">Asfaltado</option>
+                <option value="Playa">De piedra o barro</option>
               </select>
               <div class="invalid-tooltip">
                 Por favor seleccione una opción.
               </div>
             </div>
+        
             <div class="col-md-4 mb-3">
-              <label for="validationTooltip04">Cantidad de personas</label>
+              <label for="validationTooltip05">Cantidad de Personas</label>
+                <br/>
               <select class="custom-select" id="validationTooltip04" required>
-                <option value="">Seleccione un servicio</option>
-                <option selected value="Playa">Hospedaje</option>
-                <option value="Montaña">Comida</option>
+                <option value="" disabled>Seleccione el numero de personas</option>
+                <option select value="pequeño">1 a 3 personas</option>
+                <option value="mediano">4 a 7 personas</option>
+                <option value="grande">Más de 8 personas</option>
               </select>
               <div class="invalid-tooltip">
                 Por favor seleccione una opción.
               </div>
             </div>
-            <button type="button" class="btn btn-success">Enviar Respuestas</button> 
+            
+
+       
           </div>
+          <!-- End for Interest-->
+               <button type="button" class="btn btn-success" >Enviar Respuestas</button> 
         </div>
       </div> 
   </section>

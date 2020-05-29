@@ -10,9 +10,9 @@ class Controller {
     {
 
 
-        $pagina=$_SERVER['QUERY_STRING'];
+        $page=$_SERVER['QUERY_STRING'];
 
-        switch ($pagina) {
+        switch ($page) {
             case 'register':
                 include 'view/register.php';
                break;
@@ -28,9 +28,17 @@ class Controller {
             case 'opinion':
                 include 'view/opinion.php';
                   break;
-            case 'acerca':
+            case 'about':
                  include 'view/about.php';
                   break;
+
+            //form request
+
+            case 'destiny=details':
+            //$estilo=$this->model->calcularEstilo($_POST['EC'],$_POST['RO'],$_POST['CA'],$_POST['EA']); 
+                include 'view/DestinyDetails.php';
+                break;
+
             default:
                  include 'view/index.php';
                  break;
