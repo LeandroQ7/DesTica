@@ -38,7 +38,12 @@
                     <li class="d-flex justify-content-between align-items-center">
                       <span>Precio Individual</span>
                       <a href="#" class="price-btn">$250</a>
-                    </li>                         
+                    </li> 
+                    <li class="d-flex justify-content-between align-items-center">
+                      <span>Agregar a favorito</span>
+                     <input type="radio" id="1" name="radio"  value="1">
+               
+                    </li>                        
                   </ul>
                 </div>
               </div>

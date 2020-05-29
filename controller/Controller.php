@@ -31,9 +31,7 @@ class Controller {
             case 'about':
                  include 'view/about.php';
                   break;
-            case 'adminUser':
-                 include 'view/adminUser.php';
-                 break;
+            
             case 'favorite':
                  include 'view/favorite.php';
                  break;
@@ -42,6 +40,29 @@ class Controller {
                  break;
             case 'logout':
                  include 'view/index.php';
+                  break;
+
+             //user redirection
+            case 'indexUser':
+                 include 'view/userIndex.php';
+                 break;
+            case 'adminUser':
+                 include 'view/adminUser.php';
+                 break;
+            case 'destinationUser':
+                 include 'view/destinationUser.php';
+                 break;
+            case 'interestsUser':
+                 include 'view/interestsUser.php';
+                 break;
+            case 'opinionUser':
+                include 'view/opinionUser.php';
+                  break;
+            case 'aboutUser':
+                 include 'view/aboutUser.php';
+                  break;
+            case 'estimateUser':
+                 include 'view/estimateUser.php';
                   break;
 
             //form request

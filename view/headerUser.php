@@ -48,13 +48,13 @@
               </div>
               <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                  <li><a href="?index">Inicio</a></li>
-                  <li><a href="?destination">Lugares Turísticos</a></li>
-                   <li><a href="?interests">Atractivos Recomentados</a></li>
+                  <li><a href="?indexUser">Inicio</a></li>
+                  <li><a href="?destinationUser">Lugares Turísticos</a></li>
+                   <li><a href="?interestsUser">Atractivos Recomentados</a></li>
                   <li><a href="?favorite">Favoritos</a></li>
-                  <li><a href="?opinion">Danos tu opinión</a></li>
-                  <li><a href="?about">Acerca de nosotros</a></li>
-                  <li><a href="?about">Presupuesto</a></li>
+                  <li><a href="?opinionUser">Danos tu opinión</a></li>
+                  <li><a href="?aboutUser">Acerca de nosotros</a></li>
+                  <li><a href="?estimateUser">Presupuesto</a></li>
                   <li><a href="?adminUser">Mi Perfil</a></li>
                   <li class="btn-danger"><a href="?logout">Cerrar Sesion</a></li>
                 </ul>

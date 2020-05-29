@@ -22,6 +22,20 @@
                   <input type="text" class="form-control" placeholder="Mora">
                   <label for="inputName">Correo</label>
                   <input type="text" class="form-control" placeholder="l_mora@gmail.com">
+                   <label for="validationTooltip04">Ambiente Preferido</label>
+              <select class="custom-select" id="validationTooltip04" required>
+                <option value="" disabled>Seleccione un ambiente</option>
+                <option selected  value="Playa">Playa</option>
+                <option value="Montaña">Montaña</option>
+                <option value="Montaña">Ciudad</option>
+                <option value="Montaña">Rural</option>
+              </select>
+              <label for="validationTooltip04">Condicion de vía</label>
+              <select class="custom-select" id="validationTooltip04" required>
+                <option value="" disabled>Seleccione tipo de camino </option>
+                <option selected value="">Asfaltado</option>
+                <option value="Playa">De piedra o barro</option>
+              </select>
                 
 
                 </div>

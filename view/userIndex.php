@@ -68,14 +68,73 @@
                 </div>
               </div>
             </div>
-           
-          
-     
-                                                                   
+                                                                        
           </div>
+
         </div>  
          </form>
       </section>
+
+
+         <section class="destinations-area section-gap">
+            <form action="?destiny=details" method="post">
+
+        <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="menu-content pb-40 col-lg-8">
+                        <div class="title text-center">
+                            <h1 class="mb-10">Destinos encontrados apartir de tus preferencias:</h1>
+                            
+                        </div>
+                    </div>
+                </div>            
+          <div class="row">
+        
+             <div class="col-lg-12">
+              <div class="single-destinations">
+               
+                <div class="details">
+                  <h4>Lista de Atractivos Turisticos</h4>
+                 
+                  <ul class="package-list">
+                    <li class="d-flex justify-content-between align-items-center">
+                       <h5>1</h5>
+                      <span>Playa Avellanas, Guanacaste</span>
+
+                      <button type="submit" class="btn btn-link">Detalles</button>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center">
+                        <h5>2</h5>
+                      <span>Volcan Arenal</span>
+                       <button type="submit" class="btn btn-link">Detalles</button>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center">
+                        <h5>3</h5>
+                      <span>Rio Celeste</span>
+                       <button type="submit" class="btn btn-link">Detalles</button>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center">
+                        <h5>4</h5>
+                      <span>Parque Manuel Antonio</span>
+                       <button type="submit" class="btn btn-link">Detalles</button>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center">
+                        <h5>5</h5>
+                      <span>Museo del Oro</span>
+                       <button type="submit" class="btn btn-link">Detalles</button>
+                    </li>                         
+                  </ul>
+                </div>
+              </div>
+            </div>
+                                                                        
+          </div>
+
+        </div>  
+         </form>
+      </section>
+
+
         </div>  
 
       </section>

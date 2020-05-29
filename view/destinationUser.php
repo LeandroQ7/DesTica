@@ -1,5 +1,5 @@
 <?php
-  include_once 'header.php';          
+  include_once 'headerUser.php';          
 ?>
 <div class="album py-5 bg-light">
   <div class="container">
