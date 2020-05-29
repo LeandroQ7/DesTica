@@ -31,16 +31,10 @@
                <input type="radio" id="1" name="radio"  value="1">
                <label >1</label>
   
-            </div>
-            
-            <div class="col-md-4 mb-3">
               <label for="validationTooltip04">Comentario (Opcional)</label>
-              <textarea rows = "5" cols = "50" name = "comentario">
-            
-         </textarea><br>
+              <textarea rows = "5" cols = "30" name = "comentario"></textarea>
             </div>
-        
-    
+            <p>
           </div>
             <button type="button" class="btn btn-success" >Enviar Opinión</button> 
               </form>
