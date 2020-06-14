@@ -8,84 +8,80 @@ class Controller {
     }
     public function invoke()
     {
-
-
         $page=$_SERVER['QUERY_STRING'];
-
         switch ($page) {
             case 'register':
-                include 'view/register.php';
+                include VIEW_PATH.'signin/register.php';
                break;
             case 'login':
-                 include 'view/login.php';
+                 include VIEW_PATH.'signin/login.php';
                 break;
             case 'destination':
-                 include 'view/destination.php';
+                 include VIEW_PATH.'destination/destination.php';
                   break;
              case 'interests':
-                 include 'view/interests.php';
+                 include VIEW_PATH.'interests/interests.php';
                  break;
             case 'opinion':
-                include 'view/opinion.php';
+                include VIEW_PATH.'opinion/opinion.php';
                   break;
             case 'about':
-                 include 'view/about.php';
+                 include VIEW_PATH.'about/about.php';
                   break;
             
             case 'favorite':
-                 include 'view/favorite.php';
+                 include VIEW_PATH.'favorite/favorite.php';
                  break;
             case 'estimate':
-                 include 'view/estimate.php';
+                 include VIEW_PATH.'estimate/estimate.php';
                  break;
             case 'logout':
-                 include 'view/index.php';
+                 include VIEW_PATH.'home/home.php';
                   break;
 
              //user redirection
             case 'indexUser':
-                 include 'view/userIndex.php';
+                 include VIEW_PATH.'user/userIndex.php';
                  break;
             case 'adminUser':
-                 include 'view/adminUser.php';
+                 include VIEW_PATH.'user/adminUser.php';
                  break;
             case 'destinationUser':
-                 include 'view/destinationUser.php';
+                 include VIEW_PATH.'destination/destinationUser.php';
                  break;
             case 'interestsUser':
-                 include 'view/interestsUser.php';
+                 include VIEW_PATH.'interests/interestsUser.php';
                  break;
             case 'opinionUser':
-                include 'view/opinionUser.php';
+                include VIEW_PATH.'opinion/opinionUser.php';
                   break;
             case 'aboutUser':
-                 include 'view/aboutUser.php';
+                 include VIEW_PATH.'about/aboutUser.php';
                   break;
             case 'estimateUser':
-                 include 'view/estimateUser.php';
+                 include VIEW_PATH.'estimate/estimateUser.php';
                   break;
 
             //form request
-
             case 'destiny=details':
             //$estilo=$this->model->calcularEstilo($_POST['EC'],$_POST['RO'],$_POST['CA'],$_POST['EA']); 
-                include 'view/DestinyDetails.php';
+                include VIEW_PATH.'destination/DestinyDetails.php';
                 break;
 
             case 'login=verify': 
-                include 'view/userIndex.php';
+                include VIEW_PATH.'user/userIndex.php';
                 break;
 
             case 'register=newUser': 
-                include 'view/userIndex.php';
+                include VIEW_PATH.'user/userIndex.php';
                 break;
             case 'interest=search': 
-                include 'view/interestResults.php';
+                include VIEW_PATH.'interests/interestResults.php';
                 break;
 
 
             default:
-                 include 'view/index.php';
+                 include VIEW_PATH.'home/home.php';
                  break;
         }
 
