@@ -24,7 +24,7 @@ define("DB_TYPE", "mysql");
 define("DB_HOST", "163.178.107.10");
 define("DB_USER", "laboratorios");
 define("DB_PASS", "UCRSA.118");
-define("DB_NAME", "expertos_formulario");
+define("DB_NAME", "dbdestica");
 define("TBL_NAME",  "tbname");
 
 /*VARIABLES GLOBALES*/

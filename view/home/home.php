@@ -14,6 +14,7 @@
 
             </div>
           </div>
+
           <section class="destinations-area section-gap">
             <form action="?destiny=details" method="post">
 
@@ -33,35 +34,41 @@
                
                 <div class="details">
                   <h4>Lista de Atractivos Turisticos</h4>
-                 
-                  <ul class="package-list">
-                    <li class="d-flex justify-content-between align-items-center">
-                       <h5>1</h5>
-                      <span>Playa Avellanas, Guanacaste</span>
 
-                      <button type="submit" class="btn btn-link">Detalles</button>
-                    </li>
-                    <li class="d-flex justify-content-between align-items-center">
-                        <h5>2</h5>
-                      <span>Volcan Arenal</span>
-                       <button type="submit" class="btn btn-link">Detalles</button>
-                    </li>
-                    <li class="d-flex justify-content-between align-items-center">
-                        <h5>3</h5>
-                      <span>Rio Celeste</span>
-                       <button type="submit" class="btn btn-link">Detalles</button>
-                    </li>
-                    <li class="d-flex justify-content-between align-items-center">
-                        <h5>4</h5>
-                      <span>Parque Manuel Antonio</span>
-                       <button type="submit" class="btn btn-link">Detalles</button>
-                    </li>
-                    <li class="d-flex justify-content-between align-items-center">
-                        <h5>5</h5>
-                      <span>Museo del Oro</span>
-                       <button type="submit" class="btn btn-link">Detalles</button>
-                    </li>                         
-                  </ul>
+
+
+                  <table class="listTable">
+
+<tr>
+    <th>Posición</th>
+    <th>Nombre</th>
+    <th>Acción</th>
+</tr>
+
+
+<?php
+
+                                        if(isset($topten)){
+                                            
+                                           $posicion=0;
+                                           foreach ($topten as $item): 
+                                            $posicion++;
+                                      
+                                    ?>
+
+
+<tr>
+     <td><?php echo $posicion ?></td>
+     
+     <td><?php echo $item[2] ?></td>
+     <td><input type="submit"  value="Ver Detalles" name="submit" id="submit" /></td>
+</tr>
+<?php endforeach;
+  }
+ ?>
+
+</table>
+                 
                 </div>
               </div>
             </div>

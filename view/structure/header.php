@@ -31,6 +31,7 @@
       <link rel="stylesheet" href="public/css/animate.min.css">
       <link rel="stylesheet" href="public/css/owl.carousel.css">       
       <link rel="stylesheet" href="public/css/main.css">
+       <link rel="stylesheet" href="public/css/style.css">
 
       
 

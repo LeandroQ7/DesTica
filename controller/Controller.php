@@ -81,6 +81,7 @@ class Controller {
 
 
             default:
+                 $topten=$this->model->getTopTen(); 
                  include VIEW_PATH.'home/home.php';
                  break;
         }
