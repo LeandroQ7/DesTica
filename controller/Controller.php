@@ -29,7 +29,8 @@ class Controller {
                  include VIEW_PATH.'about/about.php';
                   break;
             
-            case 'favorite':
+            case 'myList':
+                 $myList=$this->model->getMyFavorites(10); 
                  include VIEW_PATH.'favorite/favorite.php';
                  break;
             case 'estimate':
@@ -40,27 +41,7 @@ class Controller {
                   break;
 
              //user redirection
-            case 'indexUser':
-                 include VIEW_PATH.'user/userIndex.php';
-                 break;
-            case 'adminUser':
-                 include VIEW_PATH.'user/adminUser.php';
-                 break;
-            case 'destinationUser':
-                 include VIEW_PATH.'destination/destinationUser.php';
-                 break;
-            case 'interestsUser':
-                 include VIEW_PATH.'interests/interestsUser.php';
-                 break;
-            case 'opinionUser':
-                include VIEW_PATH.'opinion/opinionUser.php';
-                  break;
-            case 'aboutUser':
-                 include VIEW_PATH.'about/aboutUser.php';
-                  break;
-            case 'estimateUser':
-                 include VIEW_PATH.'estimate/estimateUser.php';
-                  break;
+   
 
             //form request
             case 'destiny=details':
@@ -69,13 +50,18 @@ class Controller {
                 break;
 
             case 'login=verify': 
-                include VIEW_PATH.'user/userIndex.php';
+                $valor=$this->model->prueba(); 
+                include VIEW_PATH.'signin/login.php';
+               // include VIEW_PATH.'user/userIndex.php';
                 break;
 
             case 'register=newUser': 
                 include VIEW_PATH.'user/userIndex.php';
                 break;
             case 'interest=search': 
+                include VIEW_PATH.'interests/interestResults.php';
+                break;
+            case 'myList=favorite': 
                 include VIEW_PATH.'interests/interestResults.php';
                 break;
 

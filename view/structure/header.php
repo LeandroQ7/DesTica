@@ -21,6 +21,7 @@
       <link rel="stylesheet" href="public/css/bootstrap4.5.0/bootstrap.min.css">
       <link rel="stylesheet" href="public/css/bootstrap4.5.0/bootstrap-grid.min.css">
       <link rel="stylesheet" href="public/css/bootstrap4.5.0/bootstrap-reboot.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <!--====================CSS========================= -->
       <link rel="stylesheet" href="public/css/custom.css">
       <link rel="stylesheet" href="public/css/linearicons.css">
@@ -33,10 +34,30 @@
       <link rel="stylesheet" href="public/css/main.css">
        <link rel="stylesheet" href="public/css/style.css">
 
+       <?php
+session_start();
+/*session is started if you don't write this line can't use $_Session  global variable*/
+$_SESSION["session"]="guest";
+?>
       
 
     </head>
     <body>  
+
+    	<script>
+function myPost() {
+  var x = document.getElementById("guestMenu");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+
+
+</script>
+
       <header id="header">
         <div class="header-top">
           <div class="container">
@@ -49,15 +70,17 @@
                 <a href="?index"><img src="view/img/logo.png" alt="" title="" /></a>
               </div>
               <nav id="nav-menu-container">
-                <ul class="nav-menu">
+                <ul class="nav-menu" >
                   <li><a href="?index">Inicio</a></li>
                   <li><a href="?destination">Lugares Turísticos</a></li>
                   <li><a href="?interests">Atractivos Recomentados</a></li>
+                  <li><a href="?myList">Mis Favoritos</a></li>
                   <li><a href="?opinion">Danos tu opinión</a></li>
                   <li><a href="?about">Acerca de nosotros</a></li>
                   <li><a href="?estimate">Presupuesto</a></li>
-                  <li class="btn-primary"><a href="?login">Iniciar Sesión</a></li>
-                  <li class="btn-danger"><a href="?register">Registrarse</a></li>
+                  <li class="btn-primary" id="guestMenu"><a href="?login">Iniciar Sesión</a></li>
+                  <li class="btn-danger" id="guestMenu"><a href="?register">Registrarse</a></li>
+                  <li class="btn-primary" style="display:none;" id="userMenu"><a href="?logout">Cerrar Sesión</a></li>
                 </ul>
               </nav><!-- #nav-menu-container -->                      
           </div>
@@ -72,6 +95,9 @@
           <div class="row d-flex align-items-center justify-content-center">
             <div class="about-content col-lg-12">
               <h1 class="text-white">
+
+					
+           
                 DesTica       
               </h1> 
             

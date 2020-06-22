@@ -1,41 +1,54 @@
 <!-- Start about-info Area -->
       <section >
         <div class="container">
+
+
          
           <section class="destinations-area section-gap">
+             <h4>Lista de Atractivos Turisticos</h4>
+
             <form action="?destiny=details" method="post">
-            <div class="col-lg-12">
-              <div class="single-destinations">
-               
+              
+               <div class="single-destinations">
+
                 <div class="details">
-                  <h4>Lista de tus atractivos favoritos</h4>
                  
-                  <ul class="package-list">
-                    <li class="d-flex justify-content-between align-items-center">
-                       
-                      <span>Playa Avellanas, Guanacaste</span>
-                     
 
-                      <button type="submit" class="btn btn-link"> <img src="public/img/img2.png"  width="100" height="100">Detalles</button>
-                    </li>
-                    <li class="d-flex justify-content-between align-items-center">
-                       
-                      <span>Volcan Arenal</span>
 
-                       <button type="submit" class="btn btn-link"> <img src="public/img/img1.png"  width="100" height="100">Detalles</button>
-                    </li>
-                                           
-                  </ul>
-                              <div class="pagination">
-  <a href="#">&laquo;</a>
-  <a href="#">1</a>
-  
-  <a href="#">&raquo;</a>
-</div>
-                </div>
+                  <table class="listTable">
+
+                    <tr>
+                      <th>Posición</th>
+                      <th>Nombre</th>
+                      <th></th>
+                      <th>Acción</th>
+                    </tr>
+
+
+                    <?php
+
+                    if(isset($myList)){
+
+                     $posicion=0;
+                     foreach ($myList as $item): 
+                      $posicion++;
+
+                      ?>
+
+
+                      <tr>
+                        <td><?php echo $posicion ?></td>
+                        <td><?php echo $item[2] ?></td>
+                        <td><img class="img-fluid" src="public/img/about/info-img.jpg" alt="" width="100" height="100"></td>
+                        <td><input type="submit"  value="Ver Detalles" name="submit" id="submit" /></td>
+                      </tr>
+                    <?php endforeach;
+                  }
+                  ?>
+
+                </table>
 
               </div>
-
             </div>
 
 
