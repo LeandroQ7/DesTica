@@ -17,8 +17,16 @@ class Model {
     public function setOpinion($radio, $comment){ 
         $query="INSERT INTO ".TBL_CALIFICACION." (calification, opinion) VALUES ($radio, '$comment')";
         mysqli_query($this->conn, $query);
-        return $msg;  
-      }
+        return 1;  
+    }
+    
+    public function getValoration(){ 
+      $sql="SELECT AVG(calification) as promedio FROM ".TBL_CALIFICACION."";
+      $result=mysqli_query ($this->conn,$sql);  
+
+      $valoration = mysqli_fetch_array($result);
+      return $valoration[0];
+    }
 
 
 	  public function getTopTen(){ 
