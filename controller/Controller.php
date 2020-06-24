@@ -30,6 +30,7 @@ class Controller {
                 include VIEW_PATH.'opinion/opinion.php';
                   break;
             case 'about':
+                 $valoration=$this->model->getValoration(); 
                  include VIEW_PATH.'about/about.php';
                   break;
             
@@ -55,6 +56,7 @@ class Controller {
                 break;
 
             case 'login=verify': 
+
                 $user=$this->model->verifyUser($_POST['inputEmail'],$_POST['inputPassword']); 
                 if(isset($user)){
                     
@@ -65,12 +67,10 @@ class Controller {
                                 foreach ($user as $key => $value) {
                                     $_SESSION['session']=$value[2];
                                 }   
+                                   $topten=$this->model->getTopTen(); 
                                   include VIEW_PATH.'home/home.php';
-                              }
-                
-                   
+                              }  
                 }
-                
                // include VIEW_PATH.'user/userIndex.php';
                 break;
 
@@ -84,7 +84,33 @@ class Controller {
             case 'myList=favorite': 
                 include VIEW_PATH.'interests/interestResults.php';
                 break;
+            case 'opinion=setOpinion':
+                if (isset($_POST['radio'])) {$radio = strip_tags(trim($_POST['radio'])); }
+                if (isset($_POST['comentario']) && is_string($_POST['comentario'])) {
+                $comentario = strip_tags(trim($_POST['comentario'])); }
+                
+                if($radio!=null and $comentario!=null){ 
+                $msg="Gracias por su opinión !";         
+                $valor=$this->model->setOpinion($radio,$comentario); 
+                }else{
+                    $msg="Por favor llena bien los campos.";
+                }
+                include VIEW_PATH.'opinion/opinion.php';
+                break; 
 
+            case 'estimate=getEstimate': 
+                if (isset($_POST['personas'])) {$personas = strip_tags(trim($_POST['personas'])); }
+                if (isset($_POST['dias'])) {$dias = strip_tags(trim($_POST['dias'])); }
+                if (isset($_POST['precio'])) {$precio = strip_tags(trim($_POST['precio'])); }
+                if($personas!=null and $dias!=null and $precio!=null){ 
+                    $msg="Hemos realizado tu presupuesto !";         
+                    $valor=$this->model->getEstimate($personas,$dias,$precio); 
+                    }else{
+                        $msg="Por favor llena bien los campos.";
+                    }
+
+                include VIEW_PATH.'estimate/estimate.php';
+                break; 
 
             default:
                  $topten=$this->model->getTopTen(); 

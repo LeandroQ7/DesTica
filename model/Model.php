@@ -8,11 +8,30 @@ class Model {
 
 	}
 
-     public function prueba(){ 
+     public function prueba($valoration){ 
 
-         
-          return "Prubea";  
+          file_put_contents("hola.txt","hhhh");
+          return "Prueba: ".$valoration;  
         }
+
+    public function setOpinion($radio, $comment){ 
+        $query="INSERT INTO ".TBL_CALIFICACION." (calification, opinion) VALUES ($radio, '$comment')";
+        mysqli_query($this->conn, $query);
+        return 1;  
+    }
+
+    public function getEstimate($personas,$dias,$precio){ 
+     
+      return 1;  
+    }
+    
+    public function getValoration(){ 
+      $sql="SELECT AVG(calification) as promedio FROM ".TBL_CALIFICACION."";
+      $result=mysqli_query ($this->conn,$sql);  
+
+      $valoration = mysqli_fetch_array($result);
+      return $valoration[0];
+    }
 
 
 	  public function getTopTen(){ 
