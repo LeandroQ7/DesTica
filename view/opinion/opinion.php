@@ -10,8 +10,18 @@
               <p></br>Si quieres calificar nuestro sitio, completa las siguientes preguntas. Tus respuestas ayudaran a mejorar la página.</p>
               <form class="form" action="?opinion=setOpinion" method="post">
                 <div class="form-row">
-                  <div class="col-lg-6 info-left">
+                  <div class="col-lg-7 info-left">
                     <label for="radio">Puntuación del Sitio</label><br>
+                    <input type="radio" id="10" name="radio" value="10">
+                    <label >10</label>
+                    <input type="radio" id="9" name="radio" value="9">
+                    <label >9</label>
+                    <input type="radio" id="8" name="radio" value="8">
+                    <label >8</label>
+                    <input type="radio" id="7" name="radio" value="7">
+                    <label >7</label>
+                    <input type="radio" id="6" name="radio" value="6">
+                    <label >6</label>
                     <input type="radio" id="5" name="radio" value="5">
                     <label >5</label>
                     <input type="radio" id="4" name="radio"  value="4">

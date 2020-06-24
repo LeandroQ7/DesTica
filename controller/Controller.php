@@ -26,6 +26,7 @@ class Controller {
                 include VIEW_PATH.'opinion/opinion.php';
                   break;
             case 'about':
+                 $valoration=$this->model->getValoration(); 
                  include VIEW_PATH.'about/about.php';
                   break;
             
@@ -71,7 +72,7 @@ class Controller {
                 
                 if($radio!=null and $comentario!=null){ 
                 $msg="Gracias por su opinión !";         
-                $valor=$this->model->setOpinion($radio,$comentario, $msg); 
+                $valor=$this->model->setOpinion($radio,$comentario); 
                 }else{
                     $msg="Por favor llena bien los campos.";
                 }

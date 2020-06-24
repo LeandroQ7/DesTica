@@ -11,9 +11,15 @@
               <p>
                 DesTica es una empresa de turismo nacional, que ofrece las mejores experiencias para su familia.
               </p>
-
+              <h6>Valoración general 0 a 10 :</h6>
+              <h4>
+              <div class="alert alert-success" role="alert">
+              <?php echo number_format ($valoration,2); ?>
+              </div>
+              </h4>
+              <h6>Esta valoración es obtenida a través de las opiniones dadas por nuestros usuarios.</h6>
+              <p>
               <h6>Desarrolladores:</h6>
-              
               <p>
                 Leandro Quesada <br>
                 Anthony Salazar
@@ -21,8 +27,8 @@
                <h6>Contacto:</h6>
               
               <p>
-                Tel: xxxx-xxxx <br>
-                Correo: xxxx@gmail.com
+                Tel: <a href="tel:+50612345678">+50612345678</a><br>
+                Correo: <a href="mailto:destica@costarricenense.cr">destica@costarricenense.cr</a> 
               </p>
             </div>
           </div>
