@@ -76,9 +76,22 @@ class Controller {
                 }else{
                     $msg="Por favor llena bien los campos.";
                 }
-
                 include VIEW_PATH.'opinion/opinion.php';
-                break;        
+                break; 
+
+            case 'estimate=getEstimate': 
+                if (isset($_POST['personas'])) {$personas = strip_tags(trim($_POST['personas'])); }
+                if (isset($_POST['dias'])) {$dias = strip_tags(trim($_POST['dias'])); }
+                if (isset($_POST['precio'])) {$precio = strip_tags(trim($_POST['precio'])); }
+                if($personas!=null and $dias!=null and $precio!=null){ 
+                    $msg="Hemos realizado tu presupuesto !";         
+                    $valor=$this->model->getEstimate($personas,$dias,$precio); 
+                    }else{
+                        $msg="Por favor llena bien los campos.";
+                    }
+
+                include VIEW_PATH.'estimate/estimate.php';
+                break; 
 
             default:
                  $topten=$this->model->getTopTen(); 
