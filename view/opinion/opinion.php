@@ -1,3 +1,14 @@
+ <?php
+        if($_SESSION["session"] == "User"){
+           
+        }else{
+      echo '<script type="text/javascript">',
+     'headerAdmin();',
+     '</script>';
+
+          }          
+          ?>
+
 <!-- Start about-info Area -->
       <section class="about-info-area section-gap">
         <div class="container">

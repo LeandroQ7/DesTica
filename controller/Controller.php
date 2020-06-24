@@ -16,6 +16,10 @@ class Controller {
             case 'login':
                  include VIEW_PATH.'signin/login.php';
                 break;
+            case 'logout':
+                 $_SESSION['session']="User";
+                 include VIEW_PATH.'home/home.php';
+                break;
             case 'destination':
                  include VIEW_PATH.'destination/destination.php';
                   break;
@@ -30,7 +34,7 @@ class Controller {
                   break;
             
             case 'myList':
-                 $myList=$this->model->getMyFavorites(10); 
+                 $myList=$this->model->getMyFavorites($_SESSION["session"]); 
                  include VIEW_PATH.'favorite/favorite.php';
                  break;
             case 'estimate':
@@ -46,14 +50,30 @@ class Controller {
             //form request
             case 'destiny=details':
             //$estilo=$this->model->calcularEstilo($_POST['EC'],$_POST['RO'],$_POST['CA'],$_POST['EA']); 
+                $isFavorite=$this->model->checkIfFavorite(10,10); 
                 include VIEW_PATH.'destination/DestinyDetails.php';
                 break;
 
             case 'login=verify': 
-                $valor=$this->model->prueba(); 
-                include VIEW_PATH.'signin/login.php';
+                $user=$this->model->verifyUser($_POST['inputEmail'],$_POST['inputPassword']); 
+                if(isset($user)){
+                    
+                              if (empty($user)) {
+                                $user="credentialError";
+                                  include VIEW_PATH.'signin/login.php';
+                              }else{
+                                foreach ($user as $key => $value) {
+                                    $_SESSION['session']=$value[2];
+                                }   
+                                  include VIEW_PATH.'home/home.php';
+                              }
+                
+                   
+                }
+                
                // include VIEW_PATH.'user/userIndex.php';
                 break;
+
 
             case 'register=newUser': 
                 include VIEW_PATH.'user/userIndex.php';

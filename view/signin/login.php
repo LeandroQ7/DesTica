@@ -9,22 +9,23 @@
                 <img class="mb-4" src="public/img/logo.png" alt="" width="72" height="72">
                 <h1 class="h3 mb-3 font-weight-normal">Por favor inicie sesión</h1>
                 <label for="inputEmail" class="sr-only">Email</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address=admin@gmail.com" required autofocus>
+                <input type="text" id="inputEmail" name="inputEmail" class="form-control" placeholder="Email address=admin@gmail.com" required autofocus>
                 <label for="inputPassword" class="sr-only">Contraseña</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password=admin" required>
+                <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password=admin" required>
                 <div class="checkbox mb-3">
                   <label>
                     <input type="checkbox" value="remember-me"> Recordarme la contraseña
                   </label>
-                  <button onclick="myPost()">Click me</button>
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesión</button>
                 </div>
 
                     <div>
                                     <?php
 
-                                          if(isset($valor)){
-                                             $_SESSION['session']="User";
-                                            echo $_SESSION["session"];
+                                          if(isset($user)){
+                                            if($user=="credentialError"){
+                                                          echo "Usuario no registrado";
+                                            }
                                         }
                                     ?>
                                 </div>

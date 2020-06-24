@@ -1,7 +1,17 @@
+ <?php
+        if($_SESSION["session"] == "User"){
+           
+        }else{
+      echo '<script type="text/javascript">',
+     'headerAdmin();',
+     '</script>';
+
+          }          
+          ?>
+
 <!-- Start about-info Area -->
       <section >
         <div class="container">
-
 
          
           <section class="destinations-area section-gap">
@@ -13,8 +23,6 @@
 
                 <div class="details">
                  
-
-
                   <table class="listTable">
 
                     <tr>
@@ -38,7 +46,7 @@
 
                       <tr>
                         <td><?php echo $posicion ?></td>
-                        <td><?php echo $item[2] ?></td>
+                        <td><?php echo $item[0] ?></td>
                         <td><img class="img-fluid" src="public/img/about/info-img.jpg" alt="" width="100" height="100"></td>
                         <td><input type="submit"  value="Ver Detalles" name="submit" id="submit" /></td>
                       </tr>

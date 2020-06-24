@@ -44,10 +44,38 @@ and d.iddestination = f.iddestination;");  //Ejecuta procedimiento almacenado
           $array = array();
           if (isset($data)) {    //verificacion si hay datos
 
-            
+              
 
           } 
           return $data;  
+        }
+
+
+        public function checkIfFavorite($idUser,$idDestination){ 
+
+        $int = (int)$idUser;
+
+          $query=mysqli_query ( $this->conn,"select * from tbfavorite where iduser='$idUser' and iddestination='$idDestination'");  //Ejecuta procedimiento almacenado
+         
+          $data= mysqli_fetch_all($query);
+          
+          $array = array();
+          if (isset($data)) {    //verificacion si hay datos
+
+          } 
+          return $data;  
+        }
+
+        public function verifyUser($userEmail,$password){ 
+
+       
+
+          $query=mysqli_query ( $this->conn,"Select nameUser, passwordUser, iduser from tbuser where email='$userEmail' and passwordUser='$password';");  //Ejecuta procedimiento almacenado
+         
+          $data= mysqli_fetch_all($query);
+          
+         return $data;
+           
         }
 
 

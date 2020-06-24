@@ -1,3 +1,14 @@
+ <?php
+        if($_SESSION["session"] == "User"){
+           
+        }else{
+      echo '<script type="text/javascript">',
+     'headerAdmin();',
+     '</script>';
+
+          }          
+          ?>
+
 <div class="album py-5 bg-light">
   <div class="container">
 

@@ -1,6 +1,12 @@
   <!DOCTYPE html>
   <html class="noIE" lang="es-LA">
   <head>
+
+  	   <?php
+session_start();
+/*session is started if you don't write this line can't use $_Session  global variable*/
+
+?>
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon-->
@@ -34,23 +40,37 @@
       <link rel="stylesheet" href="public/css/main.css">
        <link rel="stylesheet" href="public/css/style.css">
 
-       <?php
-session_start();
-/*session is started if you don't write this line can't use $_Session  global variable*/
-$_SESSION["session"]="guest";
-?>
+    
       
 
     </head>
     <body>  
 
     	<script>
-function myPost() {
-  var x = document.getElementById("guestMenu");
-  if (x.style.display === "none") {
-    x.style.display = "block";
+function headerAdmin() {
+  var login = document.getElementById("loginMenu");
+  if (login.style.display === "none") {
+    login.style.display = "block";
   } else {
-    x.style.display = "none";
+    login.style.display = "none";
+  }
+  var register = document.getElementById("registerMenu");
+  if (register.style.display === "none") {
+    register.style.display = "block";
+  } else {
+    register.style.display = "none";
+  }
+  var logout = document.getElementById("logoutMenu");
+  if (logout.style.display === "none") {
+    logout.style.display = "block";
+  } else {
+    logout.style.display = "none";
+  }
+  var favorites = document.getElementById("favoritesMenu");
+  if (favorites.style.display === "none") {
+    favorites.style.display = "block";
+  } else {
+    favorites.style.display = "none";
   }
 }
 
@@ -74,13 +94,13 @@ function myPost() {
                   <li><a href="?index">Inicio</a></li>
                   <li><a href="?destination">Lugares Turísticos</a></li>
                   <li><a href="?interests">Atractivos Recomentados</a></li>
-                  <li><a href="?myList">Mis Favoritos</a></li>
+                  <li id="favoritesMenu" style="display:none;"><a href="?myList" >Mis Favoritos</a></li>
                   <li><a href="?opinion">Danos tu opinión</a></li>
                   <li><a href="?about">Acerca de nosotros</a></li>
                   <li><a href="?estimate">Presupuesto</a></li>
-                  <li class="btn-primary" id="guestMenu"><a href="?login">Iniciar Sesión</a></li>
-                  <li class="btn-danger" id="guestMenu"><a href="?register">Registrarse</a></li>
-                  <li class="btn-primary" style="display:none;" id="userMenu"><a href="?logout">Cerrar Sesión</a></li>
+                  <li class="btn-primary" id="loginMenu"><a href="?login">Iniciar Sesión</a></li>
+                  <li class="btn-danger" id="registerMenu"><a href="?register">Registrarse</a></li>
+                  <li class="btn-primary" style="display:none;" id="logoutMenu"><a href="?logout">Cerrar Sesión</a></li>
                 </ul>
               </nav><!-- #nav-menu-container -->                      
           </div>

@@ -1,3 +1,14 @@
+ <?php
+        if($_SESSION["session"] == "User"){
+           
+        }else{
+      echo '<script type="text/javascript">',
+     'headerAdmin();',
+     '</script>';
+
+          }          
+          ?>
+
 <section class="destinations-area section-gap">
         <div class="container">
                 <div class="row d-flex justify-content-center">
@@ -38,7 +49,7 @@
                     </li> 
                     <li class="d-flex justify-content-between align-items-center">
                       <span>Agregar a favorito</span>
-                     <input type="radio" id="1" name="radio"  value="1">
+                     <input type="checkbox" id="1" name="radio"  value="1">
                
                     </li>                        
                   </ul>
