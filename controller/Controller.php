@@ -50,7 +50,7 @@ class Controller {
                 break;
 
             case 'login=verify': 
-                $valor=$this->model->prueba(); 
+                //$valor=$this->model->prueba(); 
                 include VIEW_PATH.'signin/login.php';
                // include VIEW_PATH.'user/userIndex.php';
                 break;
@@ -64,7 +64,20 @@ class Controller {
             case 'myList=favorite': 
                 include VIEW_PATH.'interests/interestResults.php';
                 break;
+            case 'opinion=setOpinion':
+                if (isset($_POST['radio'])) {$radio = strip_tags(trim($_POST['radio'])); }
+                if (isset($_POST['comentario']) && is_string($_POST['comentario'])) {
+                $comentario = strip_tags(trim($_POST['comentario'])); }
+                
+                if($radio!=null and $comentario!=null){ 
+                $msg="Gracias por su opinión !";         
+                $valor=$this->model->setOpinion($radio,$comentario, $msg); 
+                }else{
+                    $msg="Por favor llena bien los campos.";
+                }
 
+                include VIEW_PATH.'opinion/opinion.php';
+                break;        
 
             default:
                  $topten=$this->model->getTopTen(); 
