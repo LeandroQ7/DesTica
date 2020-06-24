@@ -26,6 +26,7 @@ define("DB_USER", "laboratorios");
 define("DB_PASS", "UCRSA.118");
 define("DB_NAME", "dbdestica");
 define("TBL_NAME",  "tbname");
+define("TBL_CALIFICACION",  "tbcalification");
 
 /*VARIABLES GLOBALES*/
 define("ADMIN_NAME", "admin");

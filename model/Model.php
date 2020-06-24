@@ -8,11 +8,17 @@ class Model {
 
 	}
 
-     public function prueba(){ 
+     public function prueba($valoration){ 
 
-         
-          return "Prubea";  
+          file_put_contents("hola.txt","hhhh");
+          return "Prueba: ".$valoration;  
         }
+
+    public function setOpinion($radio, $comment){ 
+        $query="INSERT INTO ".TBL_CALIFICACION." (calification, opinion) VALUES ($radio, '$comment')";
+        mysqli_query($this->conn, $query);
+        return $msg;  
+      }
 
 
 	  public function getTopTen(){ 
