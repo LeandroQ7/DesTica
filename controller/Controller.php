@@ -41,9 +41,7 @@ class Controller {
             case 'estimate':
                  include VIEW_PATH.'estimate/estimate.php';
                  break;
-            case 'logout':
-                 include VIEW_PATH.'home/home.php';
-                  break;
+          
 
              //user redirection
    
@@ -114,6 +112,12 @@ class Controller {
 
             default:
                  $topten=$this->model->getTopTen(); 
+                 if (isset($_SESSION['session'])){
+
+                }else{
+                    $_SESSION['session']="User";
+                }
+                 
                  include VIEW_PATH.'home/home.php';
                  break;
         }
