@@ -19,6 +19,11 @@ class Model {
         mysqli_query($this->conn, $query);
         return 1;  
     }
+
+    public function getEstimate($personas,$dias,$precio){ 
+     
+      return 1;  
+    }
     
     public function getValoration(){ 
       $sql="SELECT AVG(calification) as promedio FROM ".TBL_CALIFICACION."";
