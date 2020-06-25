@@ -81,9 +81,8 @@ class Controller {
         include VIEW_PATH.'user/userIndex.php';
         break;
         case 'interest=search': 
-        include VIEW_PATH.'interests/interestResults.php';
-        break;
-        case 'myList=favorite': 
+        //$interestResults=$this->model->getAllDestinations();
+        $interestResults=$this->model->getAllDestinations(); 
         include VIEW_PATH.'interests/interestResults.php';
         break;
         case 'opinion=setOpinion':
