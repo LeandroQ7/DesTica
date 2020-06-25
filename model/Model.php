@@ -8,11 +8,7 @@ class Model {
 
 	}
 
-     public function prueba($valoration){ 
-
-          file_put_contents("hola.txt","hhhh");
-          return "Prueba: ".$valoration;  
-        }
+   
 
     public function setOpinion($radio, $comment){ 
         $query="INSERT INTO ".TBL_CALIFICACION." (calification, opinion) VALUES ($radio, '$comment')";
@@ -87,12 +83,28 @@ and d.iddestination = f.iddestination;");  //Ejecuta procedimiento almacenado
 
         public function verifyUser($userEmail,$password){ 
 
-       
-
           $query=mysqli_query ( $this->conn,"Select nameUser, passwordUser, iduser from tbuser where email='$userEmail' and passwordUser='$password';");  //Ejecuta procedimiento almacenado
          
           $data= mysqli_fetch_all($query);
           
+         return $data;
+           
+        }
+
+        public function getAllDestinations(){ 
+
+          $query=mysqli_query ( $this->conn,"call sp_get_all_destinations()");  //Ejecuta procedimiento almacenado
+          $data= mysqli_fetch_all($query);
+
+         return $data;
+           
+        }
+
+        public function getDestiny($idDestination){ 
+
+          $query=mysqli_query ( $this->conn,"Select iddestination,amount, location,description,title, image, video FROM dbdestica.tbdestination where iddestination='$idDestination';");  //Ejecuta procedimiento almacenado
+          $data= mysqli_fetch_all($query);
+
          return $data;
            
         }

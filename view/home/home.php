@@ -36,13 +36,13 @@
 
     <section class="destinations-area section-gap">
 
-      <form action="?destiny=details" method="post">
+
 
         <div class="container">
           <div class="row d-flex justify-content-center">
             <div class="menu-content pb-40 col-lg-8">
               <div class="title text-center">
-                <h1 class="mb-10">Top 5 de los mejores destinos</h1>
+                <h1 class="mb-10">Top 10 de los mejores destinos</h1>
 
 
               </div>
@@ -77,14 +77,17 @@
                       $posicion++;
 
                       ?>
-
+                        <form action="?destiny=details" method="post">
 
                       <tr>
                         <td><?php echo $posicion ?></td>
                         <td><?php echo $item[2] ?></td>
                         <td><img class="img-fluid" src="public/img/about/info-img.jpg" alt="" width="100" height="100"></td>
-                        <td><input type="submit"  value="Ver Detalles" name="submit" id="submit" /></td>
+                        <td><input type="text" id="ID" name="ID" value="<?php echo $item[1]?>" style="display:none;">
+                          <input type="submit"  value="Ver Detalles" name="submit" /></td>
                       </tr>
+
+                    </form>
                     <?php endforeach;
                   }
                   ?>
@@ -100,7 +103,7 @@
 
         </div>
       </div>  
-    </form>
+  
   </section>
 </div>  
 
