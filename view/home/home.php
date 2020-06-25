@@ -82,7 +82,7 @@
                       <tr>
                         <td><?php echo $posicion ?></td>
                         <td><?php echo $item[2] ?></td>
-                        <td><img class="img-fluid" src="public/img/about/info-img.jpg" alt="" width="100" height="100"></td>
+                        <td><img class="img-fluid" src="public/img/<?php echo $item[3]?>" alt="" width="100" height="100"></td>
                         <td><input type="text" id="ID" name="ID" value="<?php echo $item[1]?>" style="display:none;">
                           <input type="submit"  value="Ver Detalles" name="submit" /></td>
                       </tr>
