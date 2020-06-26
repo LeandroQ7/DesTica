@@ -43,12 +43,10 @@ class Controller {
             break;
             case 'estimate':
             include VIEW_PATH.'estimate/estimate.php';
-            break;
-            
+            break;            
 
              //user redirection
             
-
             //form request
             case 'destiny=details':
             //$estilo=$this->model->calcularEstilo($_POST['EC'],$_POST['RO'],$_POST['CA'],$_POST['EA']); 
@@ -60,7 +58,6 @@ class Controller {
             break;
 
             case 'login=verify': 
-
             $user=$this->model->verifyUser($_POST['inputEmail'],$_POST['inputPassword']); 
             if(isset($user)){
                 
@@ -83,7 +80,7 @@ class Controller {
         include VIEW_PATH.'user/userIndex.php';
         break;
         case 'interest=search': 
-        $bayes=$this->model->bayes("Montaña","Asfalto", "Lluvioso", "4 a 7", $_SESSION['allTitles']);
+        $bayes=$this->model->bayes($_POST['environment'],$_POST['road_type'], $_POST['weather'], $_POST['people_range'], $_SESSION['allTitles']);
         //$interestResults=$this->model->getAllDestinations(); 
         include VIEW_PATH.'interests/interestResults.php';
         break;

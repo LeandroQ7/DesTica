@@ -117,22 +117,22 @@ and d.iddestination = f.iddestination;");  //Ejecuta procedimiento almacenado
     public function getAllTitles(){
        $query=mysqli_query ( $this->conn,"call sp_get_destination_titles()"); 
        $data= mysqli_fetch_all($query);
-
-       
-
-      return $data;
+       return $data;
     }
 
 
     public function bayes($environment,$road,$weather,$rangeOfPeople,$allTitles){  
     $userValues = array($environment,$road,$weather,$rangeOfPeople);  //muestra a evaluar\
 
+    //var_dump($userValues);
     $title="";
     $image="";
     $amount="";
     $iddestination="";
     
-    $arrayProbabilidadPorCaracteristica= array(0.04,0.04,0.04,0.04);
+    
+    $probabilityOfFeatureArray= array(0.25,1/3,1/3,1/3);
+
   
     $valorM=4;   //valor de M
     $valorN=count($allTitles);   //valor de N
@@ -143,10 +143,6 @@ and d.iddestination = f.iddestination;");  //Ejecuta procedimiento almacenado
 
     $loopStop=0;
     
-$pila = array();
-
-
-  
     foreach ($allTitles as $key => $actualDestiny) {
 
         $frequencyArray= array('A' => 0,'B' => 0, 'C' => 0,'D' => 0);
@@ -169,31 +165,26 @@ $pila = array();
         $loopStop++;
         //var_dump( $valores);
     
-        $myArr=$this->frequencyProbability($frequencyArray,$arrayProbabilidadPorCaracteristica,$valorM,$valorN);
+        $totalValue=$this->frequencyProbability($frequencyArray,$probabilityOfFeatureArray,$valorM,$valorN);
         $object = new Destiny;
         $object->destinyID = $iddestination;
         $object->destinyName = $title;
         $object->image = $image;
         $object->amount = $amount;
+        $object->probabilityValue = $totalValue;
 
-    
-
-    $myArray[] = $object;
-
-        //array_push($pila, $myArr,$title,$image,$amount,$iddestination);
-        
-        
+       $myArray[] = $object;
+  
       }
        
         
     }
-
-   
-   
-
-    //var_dump( $d );
-
-
+    //sort from lowest to bigger probability
+    usort($myArray,function($first,$second){
+    return $first->probabilityValue > $second->probabilityValue;
+});
+    var_dump( $myArray);
+    //usort($myArray, "cmp");
 
 
      return $myArray;

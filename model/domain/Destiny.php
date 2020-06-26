@@ -7,6 +7,16 @@ class Destiny{
     public $destinyName;
     public $image;
     public $amount;
+    public $probabilityValue;
+
+     public function getProbabilityValue(){
+
+        return $this->probabilityValue;
+    }
+     
+    public function setProbabilityValue($probabilityValue){
+        $this->probabilityValue = $probabilityValue;
+    }
 
     public function getDestinyID(){
 
