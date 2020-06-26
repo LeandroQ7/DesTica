@@ -1,6 +1,9 @@
 <?php
 require_once 'core/ConexionBD.php'; 
+require_once 'model/domain/Destiny.php'; 
+
 class Model {
+
 	private $conn;
 	public function __construct() {    
 	$conexion=new ConexionBD();
@@ -9,7 +12,6 @@ class Model {
 	}
 
    
-
     public function setOpinion($radio, $comment){ 
         $query="INSERT INTO ".TBL_CALIFICACION." (calification, opinion) VALUES ($radio, '$comment')";
         mysqli_query($this->conn, $query);
@@ -108,6 +110,128 @@ and d.iddestination = f.iddestination;");  //Ejecuta procedimiento almacenado
          return $data;
            
         }
+
+
+        //---------Algoritmos-------
+
+    public function getAllTitles(){
+       $query=mysqli_query ( $this->conn,"call sp_get_destination_titles()"); 
+       $data= mysqli_fetch_all($query);
+
+       
+
+      return $data;
+    }
+
+
+    public function bayes($environment,$road,$weather,$rangeOfPeople,$allTitles){  
+    $userValues = array($environment,$road,$weather,$rangeOfPeople);  //muestra a evaluar\
+
+    $title="";
+    $image="";
+    $amount="";
+    $iddestination="";
+    
+    $arrayProbabilidadPorCaracteristica= array(0.04,0.04,0.04,0.04);
+  
+    $valorM=4;   //valor de M
+    $valorN=count($allTitles);   //valor de N
+
+
+   $query=mysqli_query ( $this->conn,"select location, camino,tiempo,rango_personas,title,image,amount,iddestination from tbdestination;"); 
+   $searchData= mysqli_fetch_all($query);
+
+    $loopStop=0;
+    
+$pila = array();
+
+
+  
+    foreach ($allTitles as $key => $actualDestiny) {
+
+        $frequencyArray= array('A' => 0,'B' => 0, 'C' => 0,'D' => 0);
+
+
+      if($loopStop<3){
+         foreach ($searchData as $key => $value) {
+          if($value[4]==$actualDestiny[0]) {
+
+            $title=$value[4];
+            $image=$value[5];
+            $amount=$value[6];
+            $iddestination=$value[7];
+             
+            //$frecuencyArray['A']++;
+             $frequencyArray=$this->destinyFrequency($userValues,$frequencyArray,$value);
+             //var_dump( $frequencyArray);
+          }
+        }
+        $loopStop++;
+        //var_dump( $valores);
+    
+        $myArr=$this->frequencyProbability($frequencyArray,$arrayProbabilidadPorCaracteristica,$valorM,$valorN);
+        $object = new Destiny;
+        $object->destinyID = $iddestination;
+        $object->destinyName = $title;
+        $object->image = $image;
+        $object->amount = $amount;
+
+    
+
+    $myArray[] = $object;
+
+        //array_push($pila, $myArr,$title,$image,$amount,$iddestination);
+        
+        
+      }
+       
+        
+    }
+
+   
+   
+
+    //var_dump( $d );
+
+
+
+
+     return $myArray;
+    }
+
+    public function destinyFrequency($userValues,$frequencyArray,$bdValues){
+
+          if($userValues[0]==$bdValues[0]){
+          $frequencyArray['A']++;    
+          }
+           if($userValues[1]==$bdValues[1]){
+          $frequencyArray['B']++;    
+          }
+           if($userValues[2]==$bdValues[2]){            
+          $frequencyArray['C']++;    
+          }
+           if($userValues[3]==$bdValues[3]){
+            
+          $frequencyArray['D']++;    
+          }
+    
+                    
+      return  $frequencyArray;
+    }
+
+    public function frequencyProbability($probabilityArray,$P,$M,$N){
+      
+    $longitud = count($probabilityArray);
+    $frecuencia=array_values($probabilityArray);  //almacena los valores de cada probabilidad usando bayes
+
+    for($i=0; $i<$longitud; $i++){            
+    $frecuencia[$i]=($frecuencia[$i]+($M*$P[$i]))/($N+$M);      //(frecuencia+(M*P)/(N+M) -calculo de cada frecuencia    
+    }
+    return array_product($frecuencia)*(1/$N);   //producto total de cada frecuencia, que se retorna
+    }
+
+
+        //---------End Algoritmos-----
 
 
 } //end model

@@ -25,6 +25,8 @@ class Controller {
             include VIEW_PATH.'destination/destination.php';
             break;
             case 'interests':
+            $_SESSION['allTitles']=$this->model->getAllTitles(); 
+
             include VIEW_PATH.'interests/interests.php';
             break;
             case 'opinion':
@@ -81,8 +83,8 @@ class Controller {
         include VIEW_PATH.'user/userIndex.php';
         break;
         case 'interest=search': 
-        //$interestResults=$this->model->getAllDestinations();
-        $interestResults=$this->model->getAllDestinations(); 
+        $bayes=$this->model->bayes("Montaña","Asfalto", "Lluvioso", "4 a 7", $_SESSION['allTitles']);
+        //$interestResults=$this->model->getAllDestinations(); 
         include VIEW_PATH.'interests/interestResults.php';
         break;
         case 'opinion=setOpinion':
