@@ -81,6 +81,7 @@ class Controller {
                     $_SESSION['session']=$value[2];
                 }   
                 $topten=$this->model->getTopTen(); 
+                $profileData=$this->model->getProfile($_SESSION['session']);
                 include VIEW_PATH.'home/home.php';
             }  
         }
@@ -133,7 +134,8 @@ class Controller {
             $topten=$this->model->getTopTen(); 
              $topten2=$this->model->getTopTen2(); 
             if (isset($_SESSION['session'])){
-
+               $profileData=$this->model->getProfile($_SESSION['session']);
+                //$_SESSION["userInfo"]=$profileData;      
             }else{
                 $_SESSION['session']="User";
             }

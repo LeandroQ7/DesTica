@@ -68,10 +68,11 @@ and d.iddestination = f.iddestination;");  //Ejecuta procedimiento almacenado
         }
 
           public function getProfile($idUser){ 
+            $int = (int)$idUser;
           $query=mysqli_query ( $this->conn,"select nameUser, email, environment,road_type,weather from tbuser where iduser=$idUser;");  
          
           $data= mysqli_fetch_all($query);
-          $array = array();
+          //$array = array();
           return $data;  
         }
 
