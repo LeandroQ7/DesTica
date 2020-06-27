@@ -23,6 +23,7 @@ class Controller {
             break;
             case 'logout':
             $_SESSION['session']="User";
+            $topten=$this->model->getTopTen();
             include VIEW_PATH.'home/home.php';
             break;
             case 'destination':
@@ -48,7 +49,22 @@ class Controller {
             break;
             case 'estimate':
             include VIEW_PATH.'estimate/estimate.php';
-            break;            
+            break;  
+            case 'addFavorite':
+            if($_SESSION['session']!="User"){
+                if($_POST['favorite']){
+                     $this->model->updateFavorite($_SESSION['session'],$_POST['ID'],"On");
+                     $isFavorite="Si";
+                }else{
+                    $this->model->updateFavorite($_SESSION['session'],$_POST['ID'],"Off");
+                    $isFavorite="No";
+                }
+                  
+                $destinyDetails=$this->model->getDestiny($_POST['ID']);
+                
+            }         
+            include VIEW_PATH.'destination/DestinyDetails.php';
+            break;           
 
              //user redirection
             
@@ -60,6 +76,7 @@ class Controller {
             $destinyDetails=$this->model->getDestiny($_POST['ID']);
             include VIEW_PATH.'destination/DestinyDetails.php';
             break;
+
             case 'profile=updateData':       
             $this->model->setProfile($_SESSION['session'],$_POST['inputName'],$_POST['inputEmail'],$_POST['environment'],$_POST['road_type'],$_POST['weather']);
             $profileData=$_SESSION["userInfo"];
@@ -132,7 +149,7 @@ class Controller {
 
             default:
             $topten=$this->model->getTopTen(); 
-             $topten2=$this->model->getTopTen2(); 
+            
             if (isset($_SESSION['session'])){
                $profileData=$this->model->getProfile($_SESSION['session']);
                 //$_SESSION["userInfo"]=$profileData;      

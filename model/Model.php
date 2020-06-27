@@ -84,18 +84,33 @@ and d.iddestination = f.iddestination;");  //Ejecuta procedimiento almacenado
 
 
         public function checkIfFavorite($idUser,$idDestination){ 
-
-        $int = (int)$idUser;
-
-          $query=mysqli_query ( $this->conn,"select * from tbfavorite where iduser='$idUser' and iddestination='$idDestination'");  //Ejecuta procedimiento almacenado
+        
+          $query=mysqli_query ( $this->conn,"select * from tbfavorite where iduser='$idUser' and iddestination='$idDestination'");  
          
           $data= mysqli_fetch_all($query);
           
           $array = array();
           if (isset($data)) {    //verificacion si hay datos
-
+            foreach ($data as $key => $value) {
+                
+              if ($value[1]==$idDestination) {
+                 return "Si";
+               }else{
+                return "No";
+               } 
+              
+            }
           } 
-          return $data;  
+        
+        }
+
+        public function updateFavorite($idUser,$idDestination,$action){ 
+          if ($action=="On") {
+                 $query=mysqli_query ( $this->conn,"insert INTO tbfavorite(iduser,iddestination) VALUES($idUser,$idDestination);");
+               }else{
+                $query=mysqli_query ( $this->conn,"delete FROM tbfavorite WHERE iduser=$idUser and iddestination=$idDestination;");
+               } 
+          
         }
 
         public function verifyUser($userEmail,$password){ 
