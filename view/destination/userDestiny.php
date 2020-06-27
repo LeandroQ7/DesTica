@@ -31,7 +31,13 @@
 
             if(isset($destiny)){
 
+              $count=0;
+
              foreach ($destiny as $item):
+              $count++;
+              if ($count<10) {
+                
+              
               ?>
 
               
@@ -59,6 +65,7 @@
 
 
               <?php
+            }
             endforeach; 
 
           }
