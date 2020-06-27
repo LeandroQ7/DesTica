@@ -89,8 +89,13 @@ class Controller {
 
 
         case 'register=newUser': 
-        include VIEW_PATH.'user/userIndex.php';
+            $user=$this->model->newUser($_POST['inputEmail'],$_POST['inputName'],$_POST['inputAge'],$_POST['inputgender'],$_POST['inputPassword'],$_POST['inputenvironment'],$_POST['inputweather'],$_POST['inputroad_type']);
+            if($user==1){include VIEW_PATH.'signin/login.php';}
+            else{include VIEW_PATH.'signin/register.php';}
+            
         break;
+
+
         case 'interest=search': 
         $bayes=$this->model->bayes($_POST['environment'],$_POST['road_type'], $_POST['weather'], $_POST['people_range'], $_SESSION['allTitles']);
         //$interestResults=$this->model->getAllDestinations(); 
