@@ -2,14 +2,14 @@
  <?php
         if($_SESSION["session"] == "User"){
            
-            echo $_SESSION["session"];
+            //echo $_SESSION["session"];
         }else
           {
             echo '<script type="text/javascript">',
      'headerAdmin();',
      '</script>'
 ;
-              echo $_SESSION["session"] ;
+              //echo $_SESSION["session"] ;
 
           }
             
