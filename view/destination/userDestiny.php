@@ -18,7 +18,7 @@
 
     <section class="destinations-area section-gap">
 
-      <h4>Hemos encontrado los siguientes destinos, que podrían ser de interes.</h4>
+      <h4>Hemos encontrado los destinos segun tus prefencias</h4>
 
       <div class="album py-5 bg-light">
         <div class="container">

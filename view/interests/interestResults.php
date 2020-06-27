@@ -1,3 +1,14 @@
+ <?php
+        if($_SESSION["session"] == "User"){
+           
+        }else{
+      echo '<script type="text/javascript">',
+     'headerAdmin();',
+     '</script>';
+
+          }          
+          ?>
+
 <!-- Start about-info Area -->
 <section >
   <div class="container">
@@ -16,8 +27,11 @@
             <?php
 
             if(isset($bayes)){
-
+             $limit=0;
              foreach ($bayes as $item):
+              if($limit<10){
+                $limit++;
+
               ?>
 
               
@@ -45,6 +59,7 @@
 
 
               <?php
+              }
             endforeach; 
 
           }

@@ -178,7 +178,7 @@ and d.iddestination = f.iddestination;");  //Ejecuta procedimiento almacenado
         $frequencyArray= array('A' => 0,'B' => 0, 'C' => 0,'D' => 0);
 
 
-      if($loopStop<3){
+    
          foreach ($searchData as $key => $value) {
           if($value[4]==$actualDestiny[0]) {
 
@@ -192,8 +192,7 @@ and d.iddestination = f.iddestination;");  //Ejecuta procedimiento almacenado
              //var_dump( $frequencyArray);
           }
         }
-        $loopStop++;
-        //var_dump( $valores);
+        
     
         $totalValue=$this->frequencyProbability($frequencyArray,$probabilityOfFeatureArray,$valorM,$valorN);
         $object = new Destiny;
@@ -205,7 +204,7 @@ and d.iddestination = f.iddestination;");  //Ejecuta procedimiento almacenado
 
        $myArray[] = $object;
   
-      }
+      
        
         
     }

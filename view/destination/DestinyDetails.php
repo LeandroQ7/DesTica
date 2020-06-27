@@ -53,13 +53,21 @@
                   <a href="#" class="price-btn">$<?php echo $item[1]?></a>
                 </li> 
                 <form id="formName" action='?addFavorite' method='post'>
+
+              <?php
+                if($_SESSION["session"] != "User"){
+                 ?>
+
                 <li class="d-flex justify-content-between align-items-center">
                   <span>Agregar a favorito</span>
                   <input type="text" id="ID" name="ID" value="<?php echo $item[0]?>" style="display:none;">
                   <input type="checkbox" id="favorite" <?php if ($isFavorite == "Si" ) echo 'checked' ; ?> name="favorite" onchange="document.getElementById('formName').submit()"  >
-
                   
-                </li>  
+                </li> 
+                 <?php
+                  }
+             
+                 ?> 
                 </form>                      
               </ul>
             </div>
