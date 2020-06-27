@@ -20,7 +20,7 @@ class Model {
 
     public function newUser($email, $nameUser, $age, $gender, $passwordUser, $environment, $road_type, $weather){ 
       $query="INSERT INTO ".TBL_USER." (email, nameUser, age, gender, passwordUser, environment,road_type, weather) VALUES ('$email', '$nameUser', $age, '$gender', '$passwordUser', '$environment','$road_type', '$weather')";
-      file_put_contents("hola.txt",$query);
+      //file_put_contents("hola.txt",$query);
       mysqli_query($this->conn, $query);
       return 1;  
   }
