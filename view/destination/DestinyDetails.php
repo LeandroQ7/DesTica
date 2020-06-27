@@ -52,11 +52,15 @@
                   <span>Precio Individual</span>
                   <a href="#" class="price-btn">$<?php echo $item[1]?></a>
                 </li> 
+                <form id="formName" action='?addFavorite' method='post'>
                 <li class="d-flex justify-content-between align-items-center">
                   <span>Agregar a favorito</span>
-                  <input type="checkbox" id="1" name="radio"  value="1">
+                  <input type="text" id="ID" name="ID" value="<?php echo $item[0]?>" style="display:none;">
+                  <input type="checkbox" id="favorite" <?php if ($isFavorite == "Si" ) echo 'checked' ; ?> name="favorite" onchange="document.getElementById('formName').submit()"  >
+
                   
-                </li>                        
+                </li>  
+                </form>                      
               </ul>
             </div>
           </div>
