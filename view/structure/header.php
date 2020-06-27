@@ -106,6 +106,7 @@ function headerAdmin() {
                   <li><a href="?estimate">Presupuesto</a></li>
                   <li class="btn-primary" id="loginMenu"><a href="?login">Iniciar Sesión</a></li>
                   <li class="btn-danger" id="registerMenu"><a href="?register">Registrarse</a></li>
+                  <li><a href="?userDestiny">Destinos para vos</a></li>
                   <li class="btn-primary" style="display:none;" id="profileMenu"><a href="?profile">Mi Perfil</a></li>
                   <li class="btn-primary" style="display:none;" id="logoutMenu"><a href="?logout">Cerrar Sesión</a></li>
                 </ul>

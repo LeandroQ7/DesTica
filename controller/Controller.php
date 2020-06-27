@@ -98,7 +98,7 @@ class Controller {
                     $_SESSION['session']=$value[2];
                 }   
                 $topten=$this->model->getTopTen(); 
-                $profileData=$this->model->getProfile($_SESSION['session']);
+                //$profileData=$this->model->getProfile($_SESSION['session']);
                 include VIEW_PATH.'home/home.php';
             }  
         }
@@ -147,11 +147,19 @@ class Controller {
             include VIEW_PATH.'estimate/estimate.php';
             break; 
 
+            case 'userDestiny':
+            if($_SESSION['session']!="User"){
+               $profileData=$this->model->getProfile($_SESSION['session']);
+            }
+            
+            include VIEW_PATH.'destination/userDestiny.php';
+            break; 
+
             default:
             $topten=$this->model->getTopTen(); 
             
             if (isset($_SESSION['session'])){
-               $profileData=$this->model->getProfile($_SESSION['session']);
+               //$profileData=$this->model->getProfile($_SESSION['session']);
                 //$_SESSION["userInfo"]=$profileData;      
             }else{
                 $_SESSION['session']="User";
