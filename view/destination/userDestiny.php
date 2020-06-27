@@ -12,86 +12,67 @@
 
           }
             
-          ?>
-<!-- Start about-info Area -->
-<section class="about-info-area section-gap">
+          ?><!-- Start about-info Area -->
+<section >
   <div class="container">
-  
 
     <section class="destinations-area section-gap">
 
+      <h4>Hemos encontrado los siguientes destinos, que podrían ser de interes.</h4>
+
+      <div class="album py-5 bg-light">
         <div class="container">
-          <div class="row d-flex justify-content-center">
-            <div class="menu-content pb-40 col-lg-8">
-              <div class="title text-center">
-                <h1 class="mb-10">Destinos Segun tu perfil</h1>
 
 
-              </div>
-            </div>
-          </div>            
           <div class="row">
 
-            <div class="col-lg-12">
-              <div class="single-destinations">
 
-                <div class="details">
-                  <h4>Lista de Atractivos Turisticos</h4>
+            <?php
 
+            if(isset($destiny)){
 
+             foreach ($destiny as $item):
+              ?>
 
-                  <table class="listTable">
+              
+              <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                  <img class="card-img-top" src="public/img/<?php echo $item->image ?>" alt="Card image cap" width="250" height="250">
+                  <div class="card-body">
+                    <p class="card-text"><?php echo $item->destinyName ?></p>
+                    <span>Precio:</span>
+                    <a  class="price-btn">$<?php echo $item->amount ?></a>
+                    <div class="d-flex justify-content-between align-items-center">
 
-                    <tr>
-                      <th>Posición</th>
-                      <th>Nombre</th>
-                      <th></th>
-                      <th>Acción</th>
-                    </tr>
+                      <form action="?destiny=details" method="post">
+                        <div class="btn-group">
+                          <input type="text" id="ID" name="ID" value="<?php echo $item->destinyID ?>" style="display:none;">
+                          <button type="submit" class="btn btn-sm btn-primary">Ver detalles</button>
 
-
-                    <?php
-
-                    if(isset($destiny)){
-
-                     $posicion=0;
-                     foreach ($destiny as $item): 
-                      $posicion++;
-
-                      ?>
-                        <form action="?destiny=details" method="post">
-
-                      <tr>
-                        <td><?php echo $posicion ?></td>
-                        <td><?php echo $item[2] ?></td>
-                        <td><img class="img-fluid" src="public/img/<?php echo $item[3]?>" alt="" width="100" height="100"></td>
-                        <td><input type="text" id="ID" name="ID" value="<?php echo $item[1]?>" style="display:none;">
-                          <input type="submit"  value="Ver Detalles" name="submit" /></td>
-                      </tr>
-
-                    </form>
-                    <?php endforeach;
-                  }
-                  ?>
-
-                </table>
-
+                        </div>
+                      </form>
+                      <small class="text-muted">9 mins</small>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
 
+
+              <?php
+            endforeach; 
+
+          }
+          ?>
 
 
 
         </div>
-      </div>  
-  
+      </div>
+
+    </div>
+
   </section>
-
-
-
-
 </div>  
 
 </section>
-<!-- End about-info Area -->
+      <!-- End about-info Area -->

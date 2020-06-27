@@ -150,6 +150,8 @@ class Controller {
             case 'userDestiny':
             if($_SESSION['session']!="User"){
                $profileData=$this->model->getProfile($_SESSION['session']);
+               $destiny=$this->model->euclides($profileData);
+
             }
             
             include VIEW_PATH.'destination/userDestiny.php';

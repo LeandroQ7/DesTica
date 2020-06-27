@@ -213,7 +213,7 @@ and d.iddestination = f.iddestination;");  //Ejecuta procedimiento almacenado
     usort($myArray,function($first,$second){
     return $first->probabilityValue > $second->probabilityValue;
 });
-    var_dump( $myArray);
+    //var_dump( $myArray);
     //usort($myArray, "cmp");
 
 
@@ -250,6 +250,140 @@ and d.iddestination = f.iddestination;");  //Ejecuta procedimiento almacenado
     }
     return array_product($frecuencia)*(1/$N);   //producto total de cada frecuencia, que se retorna
     }
+
+     public function euclides($userPreference){    //metodo que calcula el genero del usuario, recibe el recinto, promedio y estilo del usuario
+      $environmentValue=0;
+      $roadValue=0;
+      $weatherValue=0;
+
+      $environmentValueBD=0;
+      $roadValueBD=0;
+      $weatherValueBD=0;
+
+
+        $iddestination=0;
+        $title=0;
+        $image=0;
+        $amount=0;
+
+        foreach ($userPreference as $key => $value) {
+          switch ($value[2]) { 
+              case "Playa":
+              $environmentValue=1;
+              break;
+              case "Montaña":
+              $environmentValue=2;
+              break;
+              case "Ciudad":
+              $environmentValue=3;
+              break;
+              case "Historico":
+              $environmentValue=4;
+              break;
+            } 
+            switch ($value[3]) { 
+              case "Asfaltado":
+              $roadValue=1;
+              break;
+              case "Lastre":
+              $roadValue=2;
+              break;
+              case "Tierra":
+              $roadValue=3;
+              break;
+            } 
+            switch ($value[4]) { 
+              case "Caluroso":
+              $roadValue=1;
+              break;
+              case "Humedo":
+              $roadValue=2;
+              break;
+              case "Llovioso":
+              $roadValue=3;
+              break;
+            }      
+
+          }//end foreach
+
+     
+          
+          $query=mysqli_query ( $this->conn,"select location, camino,tiempo,title,image,amount,iddestination from tbdestination;");   
+          $data= mysqli_fetch_all($query);
+
+
+          if (isset($data)) {
+
+            foreach ($data as $key => $value) { 
+              switch ($value[0]) { 
+              case "Playa":
+              $environmentValueBD=1;
+              break;
+              case "Montaña":
+              $environmentValueBD=2;
+              break;
+              case "Ciudad":
+              $environmentValueBD=3;
+              break;
+              case "Historico":
+              $environmentValueBD=4;
+              break;
+            } 
+            switch ($value[1]) { 
+              case "Asfaltado":
+              $roadValueBD=1;
+              break;
+              case "Lastre":
+              $roadValueBD=2;
+              break;
+              case "Tierra":
+              $roadValueBD=3;
+              break;
+            } 
+            switch ($value[2]) { 
+              case "Caluroso":
+              $roadValueBD=1;
+              break;
+              case "Humedo":
+              $roadValueBD=2;
+              break;
+              case "Llovioso":
+              $roadValueBD=3;
+              break;
+            }
+
+              $iddestination=$value[6];
+              $title=$value[3];
+             $image=$value[4];
+             $amount=$value[5];
+
+             $distanciaActual=sqrt(pow($environmentValue-$environmentValueBD,2)+pow($roadValue-$roadValueBD,2)+
+           pow($weatherValue-$weatherValueBD,2));
+
+
+            $object = new Destiny;
+            $object->destinyID = $iddestination;
+            $object->destinyName = $title;
+            $object->image = $image;
+            $object->amount = $amount;
+            $object->probabilityValue = $distanciaActual;
+
+           $myArray[] = $object;
+
+
+            }//end foreach
+
+            usort($myArray,function($first,$second){
+    return $first->probabilityValue > $second->probabilityValue;
+});
+
+            return $myArray;
+            //var_dump($myArray);
+
+          }//end if
+
+           
+          }
 
 
         //---------End Algoritmos-----
