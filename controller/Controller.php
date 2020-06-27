@@ -16,6 +16,11 @@ class Controller {
             case 'login':
             include VIEW_PATH.'signin/login.php';
             break;
+            case 'profile':
+            $profileData=$this->model->getProfile($_SESSION["session"]);
+            $_SESSION["userInfo"]=$profileData;
+            include VIEW_PATH.'signin/profile.php';
+            break;
             case 'logout':
             $_SESSION['session']="User";
             include VIEW_PATH.'home/home.php';
@@ -49,12 +54,19 @@ class Controller {
             
             //form request
             case 'destiny=details':
-            //$estilo=$this->model->calcularEstilo($_POST['EC'],$_POST['RO'],$_POST['CA'],$_POST['EA']); 
             if($_SESSION['session']!="User"){
                 $isFavorite=$this->model->checkIfFavorite($_SESSION['session'],$_POST['ID']); 
             }        
             $destinyDetails=$this->model->getDestiny($_POST['ID']);
             include VIEW_PATH.'destination/DestinyDetails.php';
+            break;
+            case 'profile=updateData':       
+            $this->model->setProfile($_SESSION['session'],$_POST['inputName'],$_POST['inputEmail'],$_POST['environment'],$_POST['road_type'],$_POST['weather']);
+            $profileData=$_SESSION["userInfo"];
+
+            $message = "Datos Actualizados";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+            include VIEW_PATH.'home/home.php';
             break;
 
             case 'login=verify': 
@@ -114,6 +126,7 @@ class Controller {
 
             default:
             $topten=$this->model->getTopTen(); 
+             $topten2=$this->model->getTopTen2(); 
             if (isset($_SESSION['session'])){
 
             }else{

@@ -34,19 +34,18 @@ class Model {
 
 	  public function getTopTen(){ 
 
-        $iteracion=0;        
-        $resultadoEstilo="";  
 
           $query=mysqli_query ( $this->conn,"call sp_topten_list()");  //Ejecuta procedimiento almacenado
           $data= mysqli_fetch_all($query);
-          
-          $array = array();
-          if (isset($data)) {    //verificacion si hay datos
-
-            
-
-          } 
+           
           return $data;  
+        }
+
+         public function getTopTen2(){ 
+          
+ 
+           
+          return "";  
         }
 
         public function getMyFavorites($idUser){ 
@@ -57,14 +56,22 @@ class Model {
 and d.iddestination = f.iddestination;");  //Ejecuta procedimiento almacenado
          
           $data= mysqli_fetch_all($query);
-          
-          $array = array();
-          if (isset($data)) {    //verificacion si hay datos
-
-              
-
-          } 
+        
           return $data;  
+        }
+
+          public function getProfile($idUser){ 
+          $query=mysqli_query ( $this->conn,"select nameUser, email, environment,road_type,weather from tbuser where iduser=$idUser;");  
+         
+          $data= mysqli_fetch_all($query);
+          $array = array();
+          return $data;  
+        }
+
+        public function setProfile($idUser,$name,$email,$environment,$road_type,$weather){ 
+          $query=mysqli_query ( $this->conn,"update tbuser SET nameUser='$name' , email='$email', environment='$environment' ,road_type='$road_type' ,weather='$weather'  WHERE iduser=$idUser ;");  
+          //mysqli_fetch_all($query);
+          //return $data;  
         }
 
 
